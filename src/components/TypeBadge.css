@@ -1,0 +1,19 @@
+.type-badge {
+  display: inline-block;
+  min-width: 5.6em;
+  padding: 0.05em 0.7em 0.15em;
+  border: 0.1em solid rgba(0, 0, 0, 0.45);
+  border-radius: 0.5em;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.type-badge--light {
+  color: #1a1a1a;
+  text-shadow: none;
+}

@@ -1,0 +1,73 @@
+/* Lista desplegable bajo el campo de texto, con el estilo de las pantallas de la Pokédex */
+.suggestions {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  left: 0;
+  z-index: 20;
+  max-height: 20rem;
+  margin: 0;
+  padding: 0.3rem;
+  overflow-y: auto;
+  list-style: none;
+  border: 3px solid #d40f2b;
+  border-radius: 0.6rem;
+  background: #050805;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.6);
+  scrollbar-color: #d40f2b #111;
+  scrollbar-width: thin;
+}
+
+.suggestions__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.35rem;
+  color: #d8f5d8;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.suggestions__item.is-active {
+  background: #d40f2b;
+  color: #fff;
+}
+
+.suggestions__number {
+  flex: none;
+  width: 3.2rem;
+  color: #6fdc8c;
+}
+
+.suggestions__item.is-active .suggestions__number {
+  color: #ffd54a;
+}
+
+.suggestions__sprite {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  image-rendering: pixelated;
+}
+
+.suggestions__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* VT323 no tiene negrita: se refuerza con color y subrayado */
+.suggestions__match {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.suggestions__empty {
+  padding: 0.4rem 0.6rem;
+  color: #ff8a8a;
+  font-size: 1.5rem;
+}

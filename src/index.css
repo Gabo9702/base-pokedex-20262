@@ -1,0 +1,57 @@
+:root {
+  color-scheme: dark;
+  font-family: 'VT323', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 16px;
+  -webkit-font-smoothing: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Fondo animado: public/fondo.gif (se sirve en /fondo.gif) para el buscador y la Pokédex.
+ * Si el GIF no existe o no carga, se ve el color sólido de respaldo.
+ */
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: auto;
+  background-color: #14151f;
+  background-image: url('/fondo.gif');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Capa oscura semitransparente sobre el GIF para que todo se lea bien */
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(8, 9, 16, 0.6);
+  content: '';
+  pointer-events: none;
+}
+
+/* Con movimiento reducido el GIF se sustituye por el color sólido */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    background-image: none;
+  }
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* El contenido queda por encima de la capa oscura */
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}

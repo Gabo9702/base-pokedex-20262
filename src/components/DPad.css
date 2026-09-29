@@ -1,0 +1,94 @@
+.dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 13em;
+  height: 13em;
+  filter: drop-shadow(0.3em 0.35em 0 rgba(0, 0, 0, 0.35));
+}
+
+.dpad__arm,
+.dpad__center {
+  background: #1b1b1b;
+}
+
+.dpad__arm {
+  position: relative;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.dpad__arm:hover {
+  background: #2c2c2c;
+}
+
+.dpad__arm:active {
+  background: #000;
+}
+
+.dpad__arm:focus-visible {
+  outline: 0.25em solid #ffd54a;
+  outline-offset: -0.25em;
+}
+
+.dpad__arm--up {
+  grid-area: 1 / 2;
+  border-radius: 0.7em 0.7em 0 0;
+}
+
+.dpad__arm--left {
+  grid-area: 2 / 1;
+  border-radius: 0.7em 0 0 0.7em;
+}
+
+.dpad__center {
+  grid-area: 2 / 2;
+}
+
+.dpad__arm--right {
+  grid-area: 2 / 3;
+  border-radius: 0 0.7em 0.7em 0;
+}
+
+.dpad__arm--down {
+  grid-area: 3 / 2;
+  border-radius: 0 0 0.7em 0.7em;
+}
+
+/* Flechas dibujadas con bordes */
+.dpad__arm::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 1.05em solid transparent;
+  content: '';
+}
+
+.dpad__arm--up::after {
+  border-bottom-color: #6e6e6e;
+  transform: translate(-50%, -75%);
+}
+
+.dpad__arm--down::after {
+  border-top-color: #6e6e6e;
+  transform: translate(-50%, -25%);
+}
+
+.dpad__arm--left::after {
+  border-right-color: #6e6e6e;
+  transform: translate(-75%, -50%);
+}
+
+.dpad__arm--right::after {
+  border-left-color: #6e6e6e;
+  transform: translate(-25%, -50%);
+}
+
+/* Modo juego (PokeRunner): ◀ ▶ deshabilitadas y atenuadas */
+.dpad--game .dpad__arm:disabled {
+  opacity: 0.4;
+  background: #1b1b1b;
+}

@@ -1,0 +1,237 @@
+/* Contenido de la pantalla de texto (panel derecho). El tamaño base lo fija .info-screen. */
+
+.info-title {
+  margin: 0 0 0.5em;
+  padding-bottom: 0.2em;
+  border-bottom: 0.08em dashed #4b5a4b;
+  color: #ffd54a;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.info-screen p {
+  margin: 0 0 0.6em;
+}
+
+.muted {
+  color: #8fa08f;
+}
+
+.error-text {
+  color: #ff6b6b;
+}
+
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+/* --- Listas simples (habilidades, movimientos) --- */
+
+.plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plain-list li {
+  padding: 0.1em 0;
+}
+
+.plain-list--numbered {
+  counter-reset: item;
+}
+
+.plain-list--numbered li {
+  counter-increment: item;
+}
+
+.plain-list--numbered li::before {
+  display: inline-block;
+  width: 2em;
+  color: #6f826f;
+  content: counter(item) '.';
+}
+
+.tag {
+  margin-left: 0.6em;
+  padding: 0 0.4em;
+  border: 0.07em solid #ffd54a;
+  border-radius: 0.3em;
+  color: #ffd54a;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.text-button {
+  margin-top: 0.5em;
+  padding: 0.1em 0.5em;
+  border: 0.08em solid #6fdc8c;
+  border-radius: 0.3em;
+  background: transparent;
+  color: #6fdc8c;
+  font: inherit;
+  cursor: pointer;
+}
+
+.text-button:hover,
+.text-button:focus-visible {
+  background: #6fdc8c;
+  color: #000;
+}
+
+/* --- Datos clave/valor --- */
+
+.data-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15em 1.2em;
+  margin: 0;
+}
+
+.data-list dt {
+  color: #8fa08f;
+}
+
+.data-list dd {
+  margin: 0;
+}
+
+/* --- Estadísticas --- */
+
+.stat-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 4.6em 1fr 2.2em;
+  gap: 0.6em;
+  align-items: center;
+  padding: 0.12em 0;
+}
+
+.stat-row__value {
+  text-align: right;
+}
+
+.stat-row__track {
+  display: block;
+  height: 0.7em;
+  border: 0.07em solid #4b5a4b;
+  background: #1c221c;
+}
+
+.stat-row__track--empty {
+  border-color: transparent;
+  background: transparent;
+}
+
+.stat-row__fill {
+  display: block;
+  height: 100%;
+}
+
+.stat-row--total {
+  margin-top: 0.2em;
+  border-top: 0.08em dashed #4b5a4b;
+  color: #ffd54a;
+}
+
+/* --- Evolución --- */
+
+.evo-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.evo-list__item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.2em;
+  padding-bottom: 0.3em;
+}
+
+.evo-list__name.is-current {
+  color: #6fdc8c;
+}
+
+.evo-list__name.is-current::before {
+  content: '▶ ';
+}
+
+.evo-list__method {
+  font-size: 0.85em;
+}
+
+/* --- Sprites --- */
+
+.sprite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4em;
+}
+
+.sprite-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0.2em;
+  border: 0.07em solid #2f3a2f;
+}
+
+.sprite-grid__item img,
+.sprite-grid__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6em;
+  height: 3.6em;
+  image-rendering: pixelated;
+}
+
+.sprite-grid__empty {
+  color: #8fa08f;
+}
+
+.sprite-grid__item figcaption {
+  color: #8fa08f;
+  font-size: 0.8em;
+}
+
+/* --- Debilidades y resistencias --- */
+
+.matchups__group {
+  display: flex;
+  gap: 0.8em;
+  align-items: baseline;
+  padding: 0.25em 0;
+}
+
+.matchups__factor {
+  flex: none;
+  width: 1.8em;
+  color: #ffd54a;
+}
+
+.matchups .type-badge {
+  min-width: 0;
+  font-size: 0.8em;
+}
