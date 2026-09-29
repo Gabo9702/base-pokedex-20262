@@ -1,3 +1,9 @@
+# Nombre
+Carlos Gabriel Rodríguez Ornelas
+
+# Github Pages
+https://gabo9702.github.io/base-pokedex-20262/
+
 # Pokédex — React + TypeScript + PokeAPI
 
 Buscador de Pokémon por nombre o número, con una Pokédex construida solo con HTML y CSS.
